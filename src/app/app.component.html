@@ -8,7 +8,7 @@
     <label>Name
       <input type ='text' formControlName = 'name'>
     </label>
-    
+    <div class ='alert' *ngIf="!rForm.controls['name'].valid &&rForm.controls['name'].touched">This is required :D</div>
       
       <label>Description
         <textarea formControlName = 'description'></textarea>
