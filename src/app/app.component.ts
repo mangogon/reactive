@@ -22,6 +22,24 @@ export class AppComponent {
   'validate': '',
   });
   }
+  
+  ngOnInit(){
+  
+  
+  this.rForm.get('validate').valueChanges.subscribe(
+  (validate)=>{
+  if(validate == '1'){
+  this.rForm.get('name').setValidators([Validators.required, Validators.minLength(3)]);
+  this.titleAlert = 'You need to specify at least 3 characters';
+  } else{
+  this.rForm.get('name').setValidators(Validators.required);
+  }
+  this.rForm.get('name').updateValueAndValidity();
+  }
+  
+  )
+  }
+  
 addPost(post){
   this.description = post.description;
   this.name = post.name;
