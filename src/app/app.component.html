@@ -8,12 +8,13 @@
     <label>Name
       <input type ='text' formControlName = 'name'>
     </label>
-    <div class ='alert' *ngIf="!rForm.controls['name'].valid &&rForm.controls['name'].touched">This is required :D</div>
+    <div class ='alert' *ngIf="!rForm.controls['name'].valid &&rForm.controls['name'].touched">{{titleAlert}}</div>
       
       <label>Description
         <textarea formControlName = 'description'></textarea>
     </label>
      
+      <div class ='alert' *ngIf="!rForm.controls['description'].valid &&rForm.controls['description'].touched">Description better to specify between 30 and 500 characters</div>
       
       <label for='validate'>Minimum of 3 Characters</label>
       <input type ='checkbox' name='validate' formControlName = 'validate' value='1'>On

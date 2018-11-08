@@ -12,6 +12,7 @@ export class AppComponent {
   post:any;
   description:string = '';
   name:string = '';
+  titleAlert:string = 'This field is required :D'
   
   constructor(private fb:FormBuilder){
   
